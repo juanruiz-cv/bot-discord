@@ -1,6 +1,8 @@
 const { Client } = require("discord.js");
+require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
+const mySecret = process.env["TOKEN"];
 
 const client = new Client({ intents: 53608447 });
 
@@ -17,6 +19,4 @@ fs.readdirSync("./events")
     }
   });
 
-client.login(
-  "MTI4MzE3Njk1MDYzODA1MTM4MQ.GY7LXU.YFb6rLN82oD5_7gmo6iyqn6mFfkvIk51gMA_eU"
-);
+client.login(mySecret);
